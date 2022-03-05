@@ -30,6 +30,7 @@ namespace Part_3_Lesson_4
         {
           
             var connectionString = Configuration.GetConnectionString("nameTetxT");
+            services.AddScoped<UserAtribute>();
             services.AddSingleton<IUserServices, UserService>();
             services.AddDbContext<UserDbContext>(options => options.UseNpgsql(connectionString));
             services.AddControllers();
